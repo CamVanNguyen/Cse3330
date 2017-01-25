@@ -1,1 +1,19 @@
 Phase I
+
+Project Description:
+The project will a website which connects tutors to students.
+It will have a database for the tutors which will include:
+* Distance willing to travel
+* Pay Rate
+* Name
+* Subject
+* Average Rating
+* Location
+
+The database for the student will include:
+* Name
+* Price range
+* Subject
+* Location
+* Distance willing to travel
+
