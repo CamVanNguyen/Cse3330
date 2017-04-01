@@ -1,7 +1,7 @@
 create schema Library_Catalog;
 
 CREATE table ITEM( 
-    item_id INT NOT NULL,
+    item_id INT NOT NULL CHECK( item_id <= 99999999 ),
     title VARCHAR(50) NOT NULL,
     publish_date INT NOT NULL,
     recommened_id NOT NULL,
