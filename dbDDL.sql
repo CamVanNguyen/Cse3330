@@ -5,9 +5,9 @@ CREATE table ITEM(
     title VARCHAR(50) NOT NULL,
     publish_date INT NOT NULL,
     recommened_id NOT NULL CHECK (recommened_id <= 999999999),
-    user_id INT CHECK(user_id <= 9999999999),
+    user_id INT CHECK(user_id <= 9999999999), --Can be null if a user did not check out the item
     publisher_id INT NOT NULL,
-    genre_id INT NOT NULL
+    genre_id INT NOT NULL,
     PRIMARY KEY(item_id),
     FOREIGN KEY (recommended_id) REFERENCES ITEM(item_id),
     FOREIGN KEY (user_id) REFERENCES LIBUSER(user_id),
@@ -19,10 +19,10 @@ CREATE table PERSON(
     name VARCHAR(30) NOT NULL,
     PRIMARY KEY(person_id)
 );
-CREATE table LIBUSERd
+CREATE table LIBUSER
     user_id INT NOT NULL CHECK (user_id <= 9999999999),
     name VARCHAR(30) NOT NULL,
-    address VARCHAR(40) NOT NULL
+    address VARCHAR(40) NOT NULL,
     PRIMARY KEY(user_id)
 );
 CREATE table BOOK(
@@ -33,7 +33,7 @@ CREATE table BOOK(
 );
 CREATE table GENRE(
     genre_id INT NOT NULL,
-    name VARCHAR(30);
+    name VARCHAR(30),
     PRIMARY KEY(genre_id)
 );
 CREATE table MEDIA(
