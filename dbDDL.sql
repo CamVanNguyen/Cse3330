@@ -4,7 +4,7 @@ CREATE table ITEM(
     item_id INT NOT NULL CHECK( item_id <= 99999999 ),
     title VARCHAR(50) NOT NULL,
     publish_date INT NOT NULL,
-    recommened_id NOT NULL,
+    recommened_id NOT NULL CHECK (recommened_id <= 999999999),
     user_id INT,
     publisher_id INT NOT NULL,
     genre_id INT NOT NULL
@@ -19,7 +19,7 @@ CREATE table PERSON(
     name VARCHAR(30) NOT NULL,
     PRIMARY KEY(person_id)
 );
-CREATE table LIBUSER(
+CREATE table LIBUSERd
     user_id INT NOT NULL,
     name VARCHAR(30) NOT NULL,
     address VARCHAR(40) NOT NULL
@@ -27,7 +27,7 @@ CREATE table LIBUSER(
 );
 CREATE table BOOK(
     book_id INT NOT NULL,
-    page_length INT NOT NULL,
+    page_length INT NOT NULL CHECK (page_length > 0),
     PRIMARY KEY(book_id),
     FOREIGN KEY(book_id) REFERENCES ITEM(item_id)
 );
@@ -38,13 +38,13 @@ CREATE table GENRE(
 );
 CREATE table MEDIA(
     media_id INT NOT NULL,
-    runtime INT NOT NULL,
+    runtime INT NOT NULL CHECK(runtime > 0),
     PRIMARY KEY(media_id),
     FOREIGN KEY(media_id) REFERENCES ITEM(item_id)
 );
 CREATE table CD(
     cd_id INT NOT NULL,
-    num_of_tracks INT NOT NULL,
+    num_of_tracks INT NOT NULL CHECK(num_of_track > 0),
     PRIMARY KEY(cd_id),
     FOREIGN KEY(cd_id) REFERENCES MEDIA(media_id)
 );
@@ -101,7 +101,7 @@ CREATE table REVIEW(
 CREATE table RATES(
     item_id INT NOT NULL,
     user_id INT NOT NULL,
-    rating INT NOT NULL,
+    rating INT NOT NULL rating BETWEEN 1 AND 5,
     PRIMARY KEY(item_id, user_id) ,
     FOREIGN KEY(user_id) REFERENCES LIBUSER(user_id),
     FOREIGN KEY(item_id) REFERENCES ITEM(item_id)
