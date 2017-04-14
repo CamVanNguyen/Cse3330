@@ -54,7 +54,7 @@ CREATE table DVD(
 CREATE table BLURAY(
     bluray_id INT NOT NULL, CHECK (bluray_id <= 999999999 AND bluray_id >= 100000000),
     PRIMARY KEY(bluray_id),
-    FOREIGN KEY(bluray_id) REFERENCES MEDIA(media_id)
+    CONSTRAINT FK_BlurayMedia FOREIGN KEY(bluray_id) REFERENCES MEDIA(media_id)
 );
 CREATE table AUTHOR(
     book_id INT NOT NULL, CHECK (book_id <= 999999999 AND book_id >= 100000000),

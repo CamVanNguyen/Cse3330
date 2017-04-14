@@ -1,5 +1,48 @@
 /*******PERSON*******/
 /*******************/
+
+/*PUBLISHER*/
+INSERT into PERSON(person_id,name)
+VALUES( 39, 'DOUBLEDAY');
+
+INSERT into PERSON(person_id,name)
+VALUES( 40, 'ALFRED A. KNOPF');
+
+INSERT into PERSON(person_id,name)
+VALUES ( 41, 'LITTLE BROWN BOOK GROUP');
+
+INSERT into PERSON(person_id, name)
+VALUES (42, 'SIMON & SCHUSTER');
+
+INSERT into PERSON(person_id,name)
+VALUES (43, 'HOUGHTON MIFFLIN HARCOURT');
+
+INSERT into PERSON(person_id,name)
+VALUES (44, 'PENGUIN');
+
+INSERT into PERSON(person_id,name)
+VALUES (45, 'ATOM PRESS');
+
+/*MOVIE PUBLISHERS*/
+
+INSERT into PERSON(person_id,name)
+VALUES (46, 'UNIVERSAL STUDIOS');
+
+INSERT into PERSON(person_id, name)
+VALUES (47, 'ANCHOR BAY ENTERTAINMENT');
+
+INSERT into PERSON(person_id,name)
+VALUES (48, 'WALT DISNEY STUDIOS');
+
+INSERT into PERSON(person_id,name)
+VALUES (49, 'STUDIO SOLUTION GROUP');
+
+INSERT into PERSON(person_id,name)
+VALUES (50, 'MIRAMAX');
+
+INSERT into PERSON(person_id,name)
+VALUES (51, 'DOGWOLF PRICTURES');
+
 /*AUTHOR*/
 INSERT into PERSON (person_id, name)
 VALUES (11, 'STEPHEN KING');
@@ -75,8 +118,6 @@ VALUES (38, 'THE BEATLES');
 INSERT into PERSON(person_id,name)
 VALUES (37, 'NIRVANA');
 
-
-
 /*PRODUCER*/
 
 INSERT into PERSON(person_id, name)
@@ -90,139 +131,475 @@ VALUES (28. 'ANNE ROSELLINI');
 
 INSERT into PERSON(person_id, name)
 VALUES (29, 'PETER SAFRAN');
+ 
+/*GENRE*/
+INSERT into GENRE(genre_id,name)
+VALUES (100, 'HORROR');
 
+INSERT into GENRE(genre_id,name)
+VALUES (101, 'FOOD');
+
+INSERT into GENRE(genre_id,name) 
+VALUES (102, 'COMEDY');
+
+INSERT into GENRE(genre_id,name)
+VALUES (103, 'DRAMA');
+
+INSERT into GENRE(genre_id,name)
+VALUES (104, 'FANTASY');
+
+INSERT into GENRE(genre_id,name)
+VALUES (105, 'ROCK');
+
+INSERT into GENRE(genre_id,name)
+VALUES (106, 'POP');
+
+INSERT into GENRE(genre_id,name)
+VALUES (107, 'JAZZ');
+
+INSERT into GENRE(genre_id,name)
+VALUES (108, 'RAP');
+
+INSERT into GENRE(genre_id,name)
+VALUES (109, 'SCIENCE');
 
 /*LIBUSERS*/
-INSERT into ITEM (user_id, name, address)
+INSERT into LIBUSER (user_id, name, address)
 VALUES (1234567890, 'JOHN SMITH','12 COURT LANE, ARLINGTON, TX, 76103');
 
-INSERT into ITEM (user_id, name, address)
+INSERT into LIBUSER (user_id, name, address)
 VALUES (1234567891, 'JOHN JAMES','15 MILDRED CIRCLE, ARLINGTON, TX, 76323');
 
-INSERT into ITEM (user_id, name, address)
+INSERT into LIBUSER (user_id, name, address)
 VALUES (1234267820, 'KATE SMITH','12 COURT LANE, ARLINGTON, TX, 76103');
 
-INSERT into ITEM (user_id, name, address)
+INSERT into LIBUSER (user_id, name, address)
 VALUES (1254567830, 'PARK KIM','189 ROYAL LANE, ARLINGTON, TX, 76133');
 
-INSERT into ITEM (user_id, name, address)
-VALUES (1274567830, 'LEE KIM','179 HOUSTON STREET, ARLINGTON, TX, 76133');
+INSERT into LIBUSER (user_id, name, address)
+VALUES (1374567830, 'LEE KIM','179 HOUSTON STREET, ARLINGTON, TX, 76133');
 
-INSERT into ITEM (user_id, name, address)
-VALUES (1238567830, 'SARAH HA','129 DALLAS CIRCLE, ARLINGTON, TX, 76121');
+INSERT into LIBUSER (user_id, name, address)
+VALUES (1238564830, 'SARAH HA','129 DALLAS CIRCLE, ARLINGTON, TX, 76121');
 
-INSERT into ITEM (user_id, name, address)
-VALUES (1290567830, 'LUKE CERA','145 VICTORY STREET, ARLINGTON, TX, 76133');
+INSERT into LIBUSER (user_id, name, address)
+VALUES (1290537830, 'LUKE CERA','145 VICTORY STREET, ARLINGTON, TX, 76133');
 
-INSERT into ITEM (user_id, name, address)
-VALUES (1233567830, 'RYAN GONAZLES','132 6TH STREET, ARLINGTON, TX, 76133');
+INSERT into LIBUSER (user_id, name, address)
+VALUES (1233447830, 'RYAN GONAZLES','132 6TH STREET, ARLINGTON, TX, 76133');
 
-INSERT into ITEM (user_id, name, address)
-VALUES (1234566830, 'MARIA CANALES','189 WALL COURT, ARLINGTON, TX, 76133');
+INSERT into LIBUSER (user_id, name, address)
+VALUES (1234216830, 'MARIA CANALES','189 WALL COURT, ARLINGTON, TX, 76133');
 
-INSERT into ITEM (user_id, name, address)
-VALUES (1236567830, 'HOA LI','159 RED LANE, ARLINGTON, TX, 76133');
+INSERT into LIBUSER (user_id, name, address)
+VALUES (1232247830, 'HOA LI','159 RED LANE, ARLINGTON, TX, 76133');
 
 /**********ITEMS*******************/
 /*********************************/
 
 /* BOOK ITEMS*/
-INSERT into ITEM (item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (985612903, 'CARRIE', 1974, 985612904, NULL, 190234789, 201034098);
+INSERT into ITEM (item_id, title, publish_date, user_id, publisher_id, genre_id)
+VALUES (100234564, 'CARRIE', 1974,  NULL, 39 ,100 );
 
-INSERT into ITEM (item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (985612904, 'END OF WATCH', 2011, 985612903, NULL, 190234789, 201034098);
+INSERT into ITEM (item_id, title, publish_date, user_id, publisher_id, genre_id)
+VALUES (102345358, 'END OF WATCH', 2011,  NULL,42 ,100);
 
-INSERT into ITEM (item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (985612888, 'JURASSIC PARK', 1990, 985612910, NULL, 985612889, 201034100);
+INSERT into ITEM (item_id, title, publish_date, user_id, publisher_id, genre_id)
+VALUES (105612888, 'JURASSIC PARK', 1990, NULL, 40 ,100);
 
-INSERT into ITEM (item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (985612222, 'HARRY POTTER AND THE SORCERER''S STONE', 1997, 985612223, NULL, 290876544, 124536789);
+INSERT into ITEM (item_id, title, publish_date,  user_id, publisher_id, genre_id)
+VALUES (105612222, 'HARRY POTTER AND THE SORCERER''S STONE', 1997,  NULL,41 , 104);
 
-INSERT into ITEM(item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (985612223, 'HARRY POTTER AND THE CHAMER OF SECRETS', 1998, 985612222, NULL,290876544, 124536789);
+INSERT into ITEM(item_id, title, publish_date, user_id, publisher_id, genre_id)
+VALUES (105612223, 'HARRY POTTER AND THE CHAMBER OF SECRETS', 1998,  NULL, 41, 104);
 
-INSERT into ITEM(item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (103206989, 'THE GIRL', 1999, 985612222, NULL,290876544, 124536789);
+INSERT into ITEM(item_id, title, publish_date,  user_id, publisher_id, genre_id)
+VALUES (103206989, 'THE GIRL', 1999, 105612888, NULL, 44 , 102);
 
-INSERT into ITEM(item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (985615623, 'FAST FOOD NATION: THE DARK SIDE OF THE ALL_AMERICAN MEAL', 2001, 100000000, NULL,290876544, 124536789);
+INSERT into ITEM(item_id, title, publish_date, user_id, publisher_id, genre_id)
+VALUES (107915623, 'FAST FOOD NATION: THE DARK SIDE OF THE ALL_AMERICAN MEAL', 2001,  NULL,43 ,101);
 
-INSERT into ITEM(item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (985618573, 'FOOD RULES: AN EATER''S MANUAL', 2009, 985612222, NULL,290876544, 124536789);
+INSERT into ITEM(item_id, title, publish_date, user_id, publisher_id, genre_id)
+VALUES (108561347, 'FOOD RULES: AN EATER''S MANUAL', 2009,  NULL,44,101);
 
-INSERT into ITEM(item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (985618293, 'THE WONDERWORLD OF SCIENCE', 1950, 985612222, NULL,290876544, 124536789);
+INSERT into ITEM(item_id, title, publish_date,  user_id, publisher_id, genre_id)
+VALUES (105612093, 'THE WONDERWORLD OF SCIENCE', 1950,  NULL,45,109);
 
-INSERT into ITEM(item_id, title, publish_date, recommended_id, user_id, publisher_id,genre_id)
-VALUES (134521232, 'MODERN SCIENCE', 1960, 985618293, NULL, 123459087, 123098458);
+INSERT into ITEM(item_id, title, publish_date,  user_id, publisher_id,genre_id)
+VALUES (104589032, 'MODERN SCIENCE', 1960,  NULL, 45,109);
 
-INSERT into ITEM(item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (192345356, 'CHEMISTRY TODAY', 1970, 134521232, NULL, 123459087, 123098458);
+/*BOOK FOREIGN KEYS*/
+
 
 /*BLURAY ITEMS*/
-INSERT into ITEM (item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (985612889, 'JURASSIC PARK', 2013, 985612910, NULL, 985612800, 201034100);
+INSERT into ITEM (item_id, title, publish_date,  user_id, publisher_id, genre_id)
+VALUES (205612089, 'JURASSIC PARK', 2013,  NULL, 46,100 );
 
-INSERT into ITEM( item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (923412343, 'CAROL', 2015, 123498762, NULL, 902843765, 123098432);
+INSERT into ITEM( item_id, title, publish_date, user_id, publisher_id, genre_id)
+VALUES (203402343, 'CAROL', 2015,  NULL, 47,103 );
 
-INSERT into ITEM( item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (923412343, 'JAMES AND THE GIANT PEACH', 2015, 123498762, NULL, 902843765, 123098432);
+INSERT into ITEM( item_id, title, publish_date,  user_id, publisher_id, genre_id)
+VALUES (203414443, 'JAMES AND THE GIANT PEACH', 2010,  NULL, 48,101 );
 
-INSERT into ITEM( item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (923412343, 'RATATOUILLE', 2015, 123498762, NULL, 902843765, 123098432);
+INSERT into ITEM( item_id, title, publish_date,  user_id, publisher_id, genre_id)
+VALUES (203477343, 'RATATOUILLE', 2007,  NULL,47 ,101 );
 
-INSERT into ITEM( item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (923412343, 'CLERKS', 2015, 123498762, NULL, 902843765, 123098432);
+INSERT into ITEM( item_id, title, publish_date,  user_id, publisher_id, genre_id)
+VALUES (205567343, 'CLERKS', 2009, NULL,49 ,102 );
 
-INSERT into ITEM( item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (923412343, 'PULP FICTION', 2015, 123498762, NULL, 902843765, 123098432);
+INSERT into ITEM( item_id, title, publish_date,  user_id, publisher_id, genre_id)
+VALUES (203486343, 'PULP FICTION', 2011,  NULL,50 , 103);
 
-INSERT into ITEM( item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (923412343, 'FOOD INC', 2015, 123498762, NULL, 902843765, 123098432);
+INSERT into ITEM( item_id, title, publish_date,  user_id, publisher_id, genre_id)
+VALUES (203412343, 'FOOD INC', 2012,NULL, 51,101 );
+
+INSERT into ITEM (item_id, title,publish_date, user_id, publisher_id, genre_id)
+VALUES (201023456, 'KILL BILL', 2003,  NULL, 50, 103); 
 
 /*DVD ITEMS*/
-INSERT into ITEM (item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (985612890, 'JURRASIC PARK', 2000, 985612910, NULL, 985612800, 201034100);
+INSERT into ITEM (item_id, title, publish_date, user_id, publisher_id, genre_id)
+VALUES (305612890, 'JURRASIC PARK', 1993, NULL, 46,100 );
 
-INSERT into ITEM( item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (923412343, 'CHEF', 2015, 123498762, NULL, 902843765, 123098432);
+INSERT into ITEM( item_id, title, publish_date, user_id, publisher_id, genre_id)
+VALUES (309012343, 'CHEF', 2014,  NULL,49 , 101);
 
-INSERT into ITEM( item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (923412343, 'DELICATESSEN', 2015, 123498762, NULL, 902843765, 123098432);
+INSERT into ITEM( item_id, title, publish_date,  user_id, publisher_id, genre_id)
+VALUES (309112343, 'DELICATESSEN', 1991, NULL, 50,101);
 
-INSERT into ITEM( item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (923412343, 'WINTER''S BONE', 2015, 123498762, NULL, 902843765, 123098432);
+INSERT into ITEM( item_id, title, publish_date,  user_id, publisher_id, genre_id)
+VALUES (303421443, 'WINTER''S BONE', 2010,  NULL, 51,103);
 
-INSERT into ITEM( item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (923412343, 'THE CONJURING', 2015, 123498762, NULL, 902843765, 123098432);
+INSERT into ITEM( item_id, title, publish_date,  user_id, publisher_id, genre_id)
+VALUES (300479543, 'THE CONJURING', 2013,NULL, 47,100);
 
-INSERT into ITEM( item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (923412343, 'THE SHINNING', 2015, 123498762, NULL, 902843765, 123098432);
+INSERT into ITEM( item_id, title, publish_date,  user_id, publisher_id, genre_id)
+VALUES (308012343, 'THE SHINNING', 2001, NULL,50 ,100);
 
-INSERT into ITEM( item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (923412343, 'THE WITCH', 2015, 123498762, NULL, 902843765, 123098432);
+INSERT into ITEM( item_id, title, publish_date, user_id, publisher_id, genre_id)
+VALUES (307612343, 'THE WITCH', 2015, NULL,46 ,100);
+
+INSERT into ITEM(item_id, title, publish_date,  user_id, publisher_id, genre_id)
+VALUES (302398881, 'THE AVIATOR', 2004,  NULL,50 ,103);
 
 /*CD ITEMS*/
-INSERT into ITEM( item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (923412343, '25', 2015, 123498762, NULL, 902843765, 123098432);
+INSERT into ITEM( item_id, title, publish_date, user_id, publisher_id, genre_id)
+VALUES (924512343, '25', 2015,NULL, 39,106);
 
-INSERT into ITEM( item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (923412343, 'KID A', 2015, 123498762, NULL, 902843765, 123098432);
+INSERT into ITEM( item_id, title, publish_date,  user_id, publisher_id, genre_id)
+VALUES (928012343, 'KID A', 2000, NULL,44 ,108);
 
-INSERT into ITEM( item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (923412343, 'THE FRAGILE', 2015, 123498762, NULL, 902843765, 123098432);
+INSERT into ITEM( item_id, title, publish_date,  user_id, publisher_id, genre_id)
+VALUES (911072343, 'THE FRAGILE', 1999,  NULL, 45,105);
 
-INSERT into ITEM( item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (923412343, 'I SEE YOU', 2015, 123498762, NULL, 902843765, 123098432);
+INSERT into ITEM( item_id, title, publish_date,  user_id, publisher_id, genre_id)
+VALUES (923412541, 'I SEE YOU', 2017,  NULL,41 ,105);
 
-INSERT into ITEM( item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (923412343, 'KIND OF BLUE', 2015, 123498762, NULL, 902843765, 123098432);
+INSERT into ITEM( item_id, title, publish_date,  user_id, publisher_id, genre_id)
+VALUES (923412212, 'KIND OF BLUE', 1997, NULL,42 ,107);
 
-INSERT into ITEM( item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (923412343, 'REVOLVER', 2015, 123498762, NULL, 902843765, 123098432);
+INSERT into ITEM( item_id, title, publish_date,  user_id, publisher_id, genre_id)
+VALUES (923410000, 'REVOLVER', 1987,  NULL,39 ,105);
 
-INSERT into ITEM( item_id, title, publish_date, recommended_id, user_id, publisher_id, genre_id)
-VALUES (923412343, 'NEVER MIND', 2015, 123498762, NULL, 902843765, 123098432);
+INSERT into ITEM( item_id, title, publish_date,  user_id, publisher_id, genre_id)
+VALUES (923412444, 'NEVER MIND', 1991, NULL,40 ,105);
+
+INSERT into ITEM(item_id, title, publish_date,  user_id, publisher_id, genre_id)
+VALUES (925678900, 'WHITE ALBULM', 1987, NULL, 40,105);
+
+/*****BOOK*****/
+
+INSERT into BOOK(book_id,page_length)
+VALUES(100234564, 199);
+
+INSERT into BOOK(book_id,page_length)
+VALUES( 102345358, 432);
+
+INSERT into BOOK(book_id,page_length)
+VALUES(105612888, 448);
+
+INSERT into BOOK(book_id,page_length)
+VALUES(105612222, 336);
+
+INSERT into BOOK(book_id,page_length)
+VALUES(105612223, 368);
+
+INSERT into BOOK(book_id,page_length)
+VALUES(103206989, 560);
+
+INSERT into BOOK(book_id,page_length)
+VALUES(108561347, 288);
+
+INSERT into BOOK(book_id,page_length)
+VALUES(108561347, 112);
+
+INSERT into BOOK(book_id,page_length)
+VALUES(105612093, 600);
+
+INSERT into BOOK(book_id,page_length)
+VALUES(104589032, 283);
+
+
+
+/******MEDIA*******/
+/*****************/
+
+/*BLURAY*/
+INSERT into MEDIA(media_id, runtime)
+VALUES(205612089, 127);
+
+INSERT into MEDIA(media_id,runtime)
+VALUES(203402343, 118);
+
+INSERT into MEDIA(media_id,runtime)
+VALUES(203414443, 84);
+
+INSERT into MEDIA(media_id,runtime)
+VALUES(203477343, 115);
+
+INSERT into MEDIA(media_id,runtime)
+VALUES(205567343, 102);
+
+INSERT into MEDIA(media_id,runtime)
+VALUES(203486343, 178);
+
+INSERT into MEDIA(media_id,runtime)
+VALUES(203412343, 94);
+
+INSERT into MEDIA(media_id,runtime)
+VALUES(201023456, 112);
+
+/*DVD*/
+INSERT into MEDIA(media_id,runtime)
+VALUES(305612890, 127);
+
+INSERT into MEDIA(media_id,runtime)
+VALUES(309012343, 115);
+
+INSERT into MEDIA(media_id,runtime)
+VALUES(309112343,120);
+
+INSERT into MEDIA(media_id,runtime)
+VALUES(303421443,100);
+
+INSERT into MEDIA(media_id,runtime)
+VALUES(300479543,112);
+
+INSERT into MEDIA(media_id,runtime)
+VALUES(308012343,146);
+
+INSERT into MEDIA(media_id,runtime)
+VALUES(307612343,93);
+
+INSERT into MEDIA(media_id,runtime)
+VALUES(302398881, 110);
+
+/*CD*/
+INSERT into MEDIA(media_id,runtime)
+VALUES(924512343, 127);
+
+INSERT into MEDIA(media_id,runtime)
+VALUES(928012343, 115);
+
+INSERT into MEDIA(media_id,runtime)
+VALUES(911072343,120);
+
+INSERT into MEDIA(media_id,runtime)
+VALUES(923412541,100);
+
+INSERT into MEDIA(media_id,runtime)
+VALUES(923412212,112);
+
+INSERT into MEDIA(media_id,runtime)
+VALUES(923410000,146);
+
+INSERT into MEDIA(media_id,runtime)
+VALUES(923412444,93);
+
+INSERT into MEDIA(media_id,runtime)
+VALUES(925678900, 110);
+
+/******AUTHOR*******/
+/******************/
+
+INSERT into AUTHOR(book_id,author_id)
+VALUES(100234564,11);
+
+INSERT into AUTHOR(book_id,author_id)
+VALUES(102345358,11);
+
+INSERT into AUTHOR(book_id,author_id)
+VALUES(105612888,14);
+
+INSERT into AUTHOR(book_id,author_id)
+VALUES(105612222,13);
+
+INSERT into AUTHOR(book_id,author_id)
+VALUES(105612223,13);
+
+INSERT into AUTHOR(book_id,author_id)
+VALUES(103206989,18);
+
+INSERT into AUTHOR(book_id,author_id)
+VALUES(107915623,17);
+
+INSERT into AUTHOR(book_id,author_id)
+VALUES(108561347,16);
+
+INSERT into AUTHOR(book_id,author_id)
+VALUES(105612093,15);
+
+INSERT into AUTHOR(book_id,author_id)
+VALUES(104589032,15);
+
+/******ARTIST***********/
+/**********************/
+INSERT into ARTIST(media_id, artist_id)
+VALUES(924512343,32);
+
+INSERT into ARTIST(media_id, artist_id)
+VALUES(928012343,33);
+
+INSERT into ARTIST(media_id, artist_id)
+VALUES(911072343, 34);
+
+INSERT into ARTIST(media_id, artist_id)
+VALUES(923412541,35);
+
+INSERT into ARTIST(media_id, artist_id)
+VALUES(923412212,36 );
+
+INSERT into ARTIST(media_id, artist_id)
+VALUES(923410000,38);
+
+INSERT into ARTIST(media_id, artist_id)
+VALUES(923412444,37);
+
+INSERT into ARTIST(media_id,artist_id)
+VALUES(925678900,38);
+
+/*****PRODUCERDIRECTOR**/
+/***********************/
+INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+VALUES(205612089,19);
+
+INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+VALUES(203402343,20);
+
+INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+VALUES(203414443,21);
+
+INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+VALUES(203477343,22);
+
+INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+VALUES(205567343,23);
+
+INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+VALUES(203486343,24);
+
+INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+VALUES(203412343,25);
+
+INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+VALUES(201023456,24);
+
+INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+VALUES(305612890,19);
+
+INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+VALUES(309012343,26);
+
+INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+VALUES(309112343,27);
+
+INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+VALUES(303421443,28);
+
+INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+VALUES(300479543,29);
+
+INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+VALUES(308012343,26);
+
+INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+VALUES(307612343,27);
+
+INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+VALUES(302398881,29);
+
+/*******REVIEW*****/
+/******************/
+
+INSERT into REVIEW(review_num, date_review, text, item_id, user_id)
+VALUES(1,'2009-07-01','Was good.',302398881, 1234267820);
+
+INSERT into REVIEW(review_num, date_review, text,item_id, user_id)
+VALUES(2,'2009-07-01','Was funny.',100234564, 1233447830);
+
+INSERT into REVIEW(review_num, date_review, text,item_id, user_id)
+VALUES(3,'2009-07-01','Was boring.',925678900,1234567891 );
+
+INSERT into REVIEW(review_num, date_review, text,item_id, user_id)
+VALUES(4,'2009-07-01','Was cool.',925678900,1374567830 );
+
+INSERT into REVIEW(review_num, date_review, text,item_id, user_id)
+VALUES(5,'2009-07-01','Was awesome.',205612089, 1290537830);
+
+INSERT into REVIEW(review_num, date_review, text,item_id, user_id)
+VALUES(6,'2009-07-01','Was silly.',307612343,1234567890);
+
+INSERT into REVIEW(review_num, date_review, text,item_id, user_id)
+VALUES(7,'2009-07-01','Was gross.',3091123,1234567891);
+
+/******RATES*****/
+/****************/
+
+INSERT into RATES(item_id,user_id,rating)
+VALUES(302398881, 1234267820, 5);
+
+INSERT into RATES(item_id,user_id,rating)
+VALUES(100234564, 1233447830, 5);
+
+INSERT into RATES(item_id,user_id,rating)
+VALUES(925678900,1234567891, 1);
+
+INSERT into RATES(item_id,user_id,rating)
+VALUES(925678900,1374567830, 4);
+
+INSERT into RATES(item_id,user_id,rating)
+VALUES(205612089, 1290537830, 4);
+
+INSERT into RATES(item_id,user_id,rating)
+VALUES(307612343,1234567890, 2);
+
+INSERT into RATES(item_id,user_id,rating)
+VALUES(3091123,1234567891, 1);
+
+/****WRITESREVIEW***/
+/*******************/
+
+
+INSERT into WRITESREVIEW(review_num, item_id, user_id)
+VALUES(1,302398881, 1234267820);
+
+INSERT into WRITESREVIEW(review_num, item_id, user_id)
+VALUES(2,100234564, 1233447830);
+
+INSERT into WRITESREVIEW(review_num, item_id, user_id)
+VALUES(3,925678900,1234567891 );
+
+INSERT into WRITESREVIEW(review_num, item_id, user_id)
+VALUES(4,925678900,1374567830 );
+
+INSERT into WRITESREVIEW(review_num, item_id, user_id)
+VALUES(5,205612089, 1290537830);
+
+INSERT into WRITESREVIEW(review_num, item_id, user_id)
+VALUES(6,307612343,1234567890);
+
+INSERT into WRITESREVIEW(review_num, item_id, user_id)
+VALUES(7,3091123,1234567891);
+
+
+
 
