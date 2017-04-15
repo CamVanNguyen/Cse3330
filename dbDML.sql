@@ -1,3 +1,4 @@
+/* CAM NGUYEN 1000952534*/
 USE Library_Catalog;
 /*******PERSON*******/
 /*******************/
@@ -305,6 +306,7 @@ INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publishe
 VALUES (925678900, 'WHITE ALBULM', 1987,923412444, NULL, 40,105);
 
 /*****BOOK*****/
+/**************/
 
 INSERT into BOOK(book_id,page_length)
 VALUES(100234564, 199);
@@ -336,6 +338,83 @@ VALUES(105612093, 600);
 INSERT into BOOK(book_id,page_length)
 VALUES(104589032, 283);
 
+/******CD**********/
+/******************/
+INSERT into CD(cd_id, num_of_tracks)
+VALUES(924512343,11);
+
+INSERT into CD(cd_id, num_of_tracks)
+VALUES(928012343,10);
+
+INSERT into CD(cd_id, num_of_tracks)
+VALUES(911072343,23);
+
+INSERT into CD(cd_id, num_of_tracks)
+VALUES(923412541,10);
+
+INSERT into CD(cd_id, num_of_tracks)
+VALUES(923412212,5);
+
+INSERT into CD(cd_id, num_of_tracks)
+VALUES(923410000,14);
+
+INSERT into CD(cd_id, num_of_tracks)
+VALUES(923412444,12);
+
+INSERT into CD(cd_id, num_of_tracks)
+VALUES(925678900,13);
+
+/*****DVD*******/
+/**************/
+INSERT into DVD(dvd_id)
+VALUES(305612890);
+
+INSERT into DVD(dvd_id)
+VALUES(309012343);
+
+INSERT into DVD(dvd_id)
+VALUES(309112343);
+
+INSERT into DVD(dvd_id)
+VALUES(303421443);
+
+INSERT into DVD(dvd_id)
+VALUES(300479543);
+
+INSERT into DVD(dvd_id)
+VALUES(308012343);
+
+INSERT into DVD(dvd_id)
+VALUES(307612343);
+
+INSERT into DVD(dvd_id)
+VALUES(302398881);
+
+/******BLURAY******/
+/******************/
+INSERT into BLURAY(bluray_id)
+VALUES(205612089);
+
+INSERT into BLURAY(bluray_id)
+VALUES(203402343);
+
+INSERT into BLURAY(bluray_id)
+VALUES(203414443);
+
+INSERT into BLURAY(bluray_id)
+VALUES(203477343);
+
+INSERT into BLURAY(bluray_id)
+VALUES(205567343);
+
+INSERT into BLURAY(bluray_id)
+VALUES(203486343);
+
+INSERT into BLURAY(bluray_id)
+VALUES(203412343);
+
+INSERT into BLURAY(bluray_id)
+VALUES(201023456);
 
 
 /******MEDIA*******/
@@ -575,7 +654,6 @@ VALUES(302398881,1234567891, 1);
 
 /****WRITESREVIEW***/
 /*******************/
-
 
 INSERT into WRITESREVIEW(review_num, item_id, user_id)
 VALUES(1,302398881, 1234267820);
