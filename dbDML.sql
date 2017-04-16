@@ -201,44 +201,44 @@ VALUES (1232247830, 'HOA LI','159 RED LANE, ARLINGTON, TX, 76133');
 
 /* BOOK ITEMS*/
 INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publisher_id, genre_id)
-VALUES (100234564, 'CARRIE', 1974,100234564,  1234567890, 39 ,100 );
+VALUES (100234564, 'CARRIE', 1974,NULL,  1234567890, 39 ,100 );
 
 INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publisher_id, genre_id)
-VALUES (102345358, 'END OF WATCH', 2011,100234564,  NULL,42 ,100);
+VALUES (102345358, 'END OF WATCH', 2011,NULL,  NULL,42 ,100);
 
 INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publisher_id, genre_id)
-VALUES (105612888, 'JURASSIC PARK', 1990,102345358, NULL, 40 ,100);
+VALUES (105612888, 'JURASSIC PARK', 1990,NULL, NULL, 40 ,100);
 
 INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publisher_id, genre_id)
-VALUES (105612222, 'HARRY POTTER AND THE SORCERER''S STONE', 1997,105612888,  NULL,41 , 104);
+VALUES (105612222, 'HARRY POTTER AND THE SORCERER''S STONE', 1997,NULL,  1238564830,41 , 104);
 
 INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publisher_id, genre_id)
 VALUES (105612223, 'HARRY POTTER AND THE CHAMBER OF SECRETS', 1998, 105612222, NULL, 41, 104);
 
 INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publisher_id, genre_id)
-VALUES (103206989, 'THE GIRL', 1999,105612223, NULL, 44 , 102);
+VALUES (103206989, 'THE GIRL', 1999,105612222, NULL, 44 , 102);
 
 INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publisher_id, genre_id)
-VALUES (107915623, 'FAST FOOD NATION', 2001,103206989,  NULL,43 ,101);
+VALUES (107915623, 'FAST FOOD NATION', 2001,NULL, 1238564830,43 ,101);
 
 INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publisher_id, genre_id)
 VALUES (108561347, 'FOOD RULES: AN EATER''S MANUAL', 2009,107915623, NULL,44,101);
 
 INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publisher_id, genre_id)
-VALUES (105612093, 'THE WONDERWORLD OF SCIENCE', 1950, 108561347, NULL,45,109);
+VALUES (105612093, 'THE WONDERWORLD OF SCIENCE', 1950,NULL , NULL,45,109);
 
 INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publisher_id, genre_id)
-VALUES (104589032, 'MODERN SCIENCE', 1960, 105612093, NULL, 45,109);
+VALUES (104589032, 'MODERN SCIENCE', 1960, 105612093 , NULL, 45,109);
 
 /*BLURAY ITEMS*/
 INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publisher_id, genre_id)
-VALUES (205612089, 'JURASSIC PARK', 2013,  205612089,1234567890, 46,100 );
+VALUES (205612089, 'JURASSIC PARK', 2013,  105612888,1234567890, 46,100 );
 
 INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publisher_id, genre_id)
-VALUES (203402343, 'CAROL', 2015, 205612089, NULL, 47,103 );
+VALUES (203402343, 'CAROL', 2015, NULL, NULL, 47,103 );
 
 INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publisher_id, genre_id)
-VALUES (203414443, 'JAMES AND THE GIANT PEACH', 2010, 203402343, NULL, 48,101 );
+VALUES (203414443, 'JAMES AND THE GIANT PEACH', 2010, 203402343, 1238564830, 48,101 );
 
 INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publisher_id, genre_id)
 VALUES (203477343, 'RATATOUILLE', 2007, 203414443, NULL,47 ,101 );
@@ -250,14 +250,14 @@ INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publishe
 VALUES (203486343, 'PULP FICTION', 2011,205567343,  NULL,50 , 103);
 
 INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publisher_id, genre_id)
-VALUES (203412343, 'FOOD INC', 2012,203486343,NULL, 51,101 );
+VALUES (203412343, 'FOOD INC', 2012,107915623,NULL, 51,101 );
 
 INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publisher_id, genre_id)
 VALUES (201023456, 'KILL BILL', 2003,203412343,  NULL, 50, 103); 
 
 /*DVD ITEMS*/
 INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publisher_id, genre_id)
-VALUES (305612890, 'JURRASIC PARK', 1993,305612890, NULL, 46,100 );
+VALUES (305612890, 'JURRASIC PARK', 1993,NULL, NULL, 46,100 );
 
 INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publisher_id, genre_id)
 VALUES (309012343, 'CHEF', 2014,305612890,  NULL,49 , 101);
@@ -269,23 +269,23 @@ INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publishe
 VALUES (303421443, 'WINTER''S BONE', 2010,309112343,  1234567890, 51,103);
 
 INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publisher_id, genre_id)
-VALUES (300479543, 'THE CONJURING', 2013,303421443,NULL, 47,100);
+VALUES (300479543, 'THE CONJURING', 2013,NULL,NULL, 47,100);
 
 INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publisher_id, genre_id)
-VALUES (308012343, 'THE SHINNING', 2001,300479543, NULL,50 ,100);
+VALUES (308012343, 'THE SHINNING', 2001,NULL, NULL,50 ,100);
 
 INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publisher_id, genre_id)
-VALUES (307612343, 'THE WITCH', 2015,308012343, NULL,46 ,100);
+VALUES (307612343, 'THE WITCH', 2015,300479543, NULL,46 ,100);
 
 INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publisher_id, genre_id)
-VALUES (302398881, 'THE AVIATOR', 2004, 307612343, NULL,50 ,103);
+VALUES (302398881, 'THE AVIATOR', 2004, NULL, 1232247830,50 ,103);
 
 /*CD ITEMS*/
 INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publisher_id, genre_id)
-VALUES (924512343, '25', 2015,924512343,NULL, 39,106);
+VALUES (924512343, '25', 2015,NULL,NULL, 39,106);
 
 INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publisher_id, genre_id)
-VALUES (928012343, 'KID A', 2000,924512343, NULL,44 ,108);
+VALUES (928012343, 'KID A', 2000,924512343, 1232247830,44 ,108);
 
 INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publisher_id, genre_id)
 VALUES (911072343, 'THE FRAGILE', 1999,928012343,  NULL, 45,105);
@@ -636,10 +636,25 @@ INSERT into RATES(item_id,user_id,rating)
 VALUES(302398881, 1234267820, 5);
 
 INSERT into RATES(item_id,user_id,rating)
+VALUES(302398881,1234567891, 5);
+
+INSERT into RATES(item_id,user_id,rating)
+VALUES(302398881, 1233447830, 3);
+
+INSERT into RATES(item_id,user_id,rating)
+VALUES(302398881,1374567830, 5);
+
+INSERT into RATES(item_id,user_id,rating)
 VALUES(100234564, 1233447830, 5);
 
 INSERT into RATES(item_id,user_id,rating)
+VALUES(100234564,1234567891, 4);
+
+INSERT into RATES(item_id,user_id,rating)
 VALUES(925678900,1234567891, 1);
+
+INSERT into RATES(item_id,user_id,rating)
+VALUES(925678900, 1234267820, 3);
 
 INSERT into RATES(item_id,user_id,rating)
 VALUES(925678900,1374567830, 4);
@@ -651,7 +666,8 @@ INSERT into RATES(item_id,user_id,rating)
 VALUES(307612343,1234567890, 2);
 
 INSERT into RATES(item_id,user_id,rating)
-VALUES(302398881,1234567891, 1);
+VALUES(307612343,1234267820, 4);
+
 
 /****WRITESREVIEW***/
 /*******************/

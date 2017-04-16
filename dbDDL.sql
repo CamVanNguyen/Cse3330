@@ -1,5 +1,5 @@
 /* CAM NGUYEN 1000952534
-   TANMAY SARDESAI*/
+   TANMAY SARDESAI 1001094616*/
 CREATE DATABASE Library_Catalog;
 USE Library_Catalog;
 
@@ -7,7 +7,7 @@ CREATE table ITEM(
     item_id INT(9) NOT NULL, CHECK ( item_id <= 999999999 AND item_id >= 100000000 ),
     title VARCHAR(50) NOT NULL,
     publish_date YEAR(4) NOT NULL,
-    recommended_id INT(9) NOT NULL, CHECK (recommended_id <= 999999999 AND recommended_id >= 100000000),
+    recommended_id INT(9), CHECK (recommended_id <= 999999999 AND recommended_id >= 100000000),
     user_id INT(10), CHECK(user_id <= 9999999999 AND user_id >= 1000000000), 
     publisher_id INT(2) NOT NULL,
     genre_id INT(3) NOT NULL,
@@ -112,11 +112,12 @@ ALTER TABLE ITEM ADD CONSTRAINT FK_ITEM_LIBUSER_user_id FOREIGN KEY (user_id) RE
 ALTER TABLE ITEM ADD CONSTRAINT FK_ITEM_PERSON_publisher_id FOREIGN KEY (publisher_id) REFERENCES PERSON(person_id);
 ALTER TABLE ITEM ADD CONSTRAINT FK_ITEM_GENRE_genre_id FOREIGN KEY (genre_id) REFERENCES GENRE(genre_id);
 
+
 CREATE VIEW RATINGS_VIEW AS
-SELECT a.I ,AVG(R) AS Avg_Ratings
+SELECT a.I AS item_id ,AVG(R) AS Avg_Ratings
 FROM ((SELECT ITEM.item_id AS I, RATES.rating AS R
       FROM 
-      ITEM INNER JOIN RATES ON ITEM.item_id=RATES.item_id) AS a )
+      ITEM LEFT JOIN RATES ON ITEM.item_id=RATES.item_id) AS a )
 GROUP BY a.I
 ORDER BY Avg_Ratings DESC;
 
