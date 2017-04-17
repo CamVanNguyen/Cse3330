@@ -7,7 +7,7 @@ USE Library_Catalog;
 CREATE table ITEM( 
     item_id INT(9) NOT NULL, CHECK ( item_id <= 999999999 AND item_id >= 100000000 ),
     title VARCHAR(50) NOT NULL,
-    publish_date YEAR(4) NOT NULL,
+    publish_date YEAR(4) NOT NULL, CHECK( publish_date <= YEAR(CURDATE())),
     recommended_id INT(9), CHECK (recommended_id <= 999999999 AND recommended_id >= 100000000),
     user_id INT(10), CHECK(user_id <= 9999999999 AND user_id >= 1000000000), 
     publisher_id INT(2) NOT NULL,
@@ -81,7 +81,7 @@ CREATE table ARTIST(
 );
 CREATE table REVIEW(
     review_num INT NOT NULL,
-    date_review DATE NOT NULL,
+    date_review DATE NOT NULL,CHECK( date_review <= DATE(NOW())),
     text VARCHAR(150) NOT NULL,
     item_id INT NOT NULL, CHECK(item_id <= 999999999 AND item_id >= 100000000),
     user_id INT NOT NULL, CHECK(user_id <= 9999999999 AND user_id >= 1000000000),
