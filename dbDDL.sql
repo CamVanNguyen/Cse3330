@@ -1,5 +1,6 @@
 /* CAM NGUYEN 1000952534
    TANMAY SARDESAI 1001094616*/
+   
 CREATE DATABASE Library_Catalog;
 USE Library_Catalog;
 
