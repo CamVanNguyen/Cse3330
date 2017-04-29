@@ -304,7 +304,7 @@ INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publishe
 VALUES (923412444, 'NEVER MIND', 1991,923410000, NULL,40 ,105,'never_mind.jpg');
 
 INSERT into ITEM (item_id, title, publish_date,recommended_id, user_id, publisher_id, genre_id, cover_image)
-VALUES (925678900, 'WHITE ALBULM', 1987,923412444, NULL, 40,105,'white_album.jpg');
+VALUES (925678900, 'WHITE ALBULM', 1987,923412444, NULL, 40,105,'white_albulm.jpg');
 
 /*****BOOK*****/
 /**************/
