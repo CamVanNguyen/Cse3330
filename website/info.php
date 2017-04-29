@@ -17,12 +17,12 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0){
   while($row = $result->fetch_assoc()){
-    echo "item_id: " . $row["item_id"]. " - Title: " . $row["title"] . "<br>";
+    echo "<div><p> item_id: " . $row["item_id"]. " - Title: " . $row["title"] . "</p><br></div>";
   
   }
 }
 else {
-  echo "0 results.";
+  echo "<p>0 results.</p>";
 }
 $conn->close();
 ?> 

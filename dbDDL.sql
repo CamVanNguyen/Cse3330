@@ -12,6 +12,7 @@ CREATE table ITEM(
     user_id INT(10), CHECK(user_id <= 9999999999 AND user_id >= 1000000000), 
     publisher_id INT(2) NOT NULL,
     genre_id INT(3) NOT NULL,
+    cover_image VARCHAR(100),
     PRIMARY KEY(item_id)
 );
 CREATE table PERSON(
