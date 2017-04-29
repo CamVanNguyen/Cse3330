@@ -558,52 +558,52 @@ VALUES(201023456);
 
 /*****PRODUCERDIRECTOR**/
 /***********************/
-INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+INSERT into PRODUCERDIRECTOR(media_id,producerdirector_id)
 VALUES(205612089,19);
 
-INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+INSERT into PRODUCERDIRECTOR(media_id,producerdirector_id)
 VALUES(203402343,20);
 
-INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+INSERT into PRODUCERDIRECTOR(media_id,producerdirector_id)
 VALUES(203414443,21);
 
-INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+INSERT into PRODUCERDIRECTOR(media_id,producerdirector_id)
 VALUES(203477343,22);
 
-INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+INSERT into PRODUCERDIRECTOR(media_id,producerdirector_id)
 VALUES(205567343,23);
 
-INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+INSERT into PRODUCERDIRECTOR(media_id,producerdirector_id)
 VALUES(203486343,24);
 
-INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+INSERT into PRODUCERDIRECTOR(media_id,producerdirector_id)
 VALUES(203412343,25);
 
-INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+INSERT into PRODUCERDIRECTOR(media_id,producerdirector_id)
 VALUES(201023456,24);
 
-INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+INSERT into PRODUCERDIRECTOR(media_id,producerdirector_id)
 VALUES(305612890,19);
 
-INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+INSERT into PRODUCERDIRECTOR(media_id,producerdirector_id)
 VALUES(309012343,26);
 
-INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+INSERT into PRODUCERDIRECTOR(media_id,producerdirector_id)
 VALUES(309112343,27);
 
-INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+INSERT into PRODUCERDIRECTOR(media_id,producerdirector_id)
 VALUES(303421443,28);
 
-INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+INSERT into PRODUCERDIRECTOR(media_id,producerdirector_id)
 VALUES(300479543,29);
 
-INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+INSERT into PRODUCERDIRECTOR(media_id,producerdirector_id)
 VALUES(308012343,26);
 
-INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+INSERT into PRODUCERDIRECTOR(media_id,producerdirector_id)
 VALUES(307612343,27);
 
-INSERT into PRODUCERDIRECTOR(media_id,pd_id)
+INSERT into PRODUCERDIRECTOR(media_id,producerdirector_id)
 VALUES(302398881,29);
 
 /*******REVIEW*****/

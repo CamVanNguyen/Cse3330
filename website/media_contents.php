@@ -13,13 +13,14 @@ if ($conn->connect_error) {
 }
 
 $sql = "SELECT title, cover_image, name
-        FROM (DVD Natural Join ITEM  Natural Join MEDIA Natural Join PRODUCERDIRECTOR Natural Join PERSON)
-	WHERE DVD.dvd_id = ITEM.item_id &&
+        FROM (".$media_type." Natural Join ITEM  Natural Join MEDIA Natural Join ".$person_type." Natural Join PERSON)
+	WHERE ".$media_type.".".strtolower($media_type)."_id = ITEM.item_id &&
               MEDIA.media_id = ITEM.item_id &&
-              MEDIA.media_id = DVD.dvd_id &&
-              PRODUCERDIRECTOR.pd_id = person_id
+              MEDIA.media_id = ".$media_type.".".strtolower($media_type)."_id &&
+              ".$person_type.".".strtolower($person_type)."_id = person_id
         ORDER BY title ASC";
-	
+   
+      
 $result = $conn->query($sql);
 echo "<div><br></div><div>";
 if ($result->num_rows > 0){
@@ -35,35 +36,5 @@ else {
   echo "<p>0 results.</p>";
 }
 $conn->close();
-
-?> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ?>

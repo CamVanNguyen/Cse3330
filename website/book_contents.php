@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 
 $sql = "SELECT title, cover_image, name
         FROM (BOOK Natural Join ITEM  Natural Join AUTHOR Natural Join PERSON)
-	WHERE BOOK.book_id = ITEM.item_id &&
+	      WHERE BOOK.book_id = ITEM.item_id &&
               BOOK.book_id = AUTHOR.book_id &&
               author_id = person_id
         ORDER BY title ASC";
@@ -34,35 +34,5 @@ else {
   echo "<p>0 results.</p>";
 }
 $conn->close();
-
-?> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ?>

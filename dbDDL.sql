@@ -68,10 +68,10 @@ CREATE table AUTHOR(
 );
 CREATE table PRODUCERDIRECTOR(
     media_id INT(9) NOT NULL, CHECK (media_id <= 999999999 AND media_id >= 100000000),
-    pd_id INT(9) NOT NULL,
-    PRIMARY KEY(media_id,pd_id),
+    producerdirector_id INT(9) NOT NULL,
+    PRIMARY KEY(media_id,producerdirector_id),
     CONSTRAINT FK_PRODUCERDIRECTOR_MEDIA_media_id FOREIGN KEY(media_id) REFERENCES MEDIA(media_id),
-    CONSTRAINT FK_PRODUCERDIRECTOR_PERSON_person_id FOREIGN KEY(pd_id) REFERENCES PERSON(person_id)
+    CONSTRAINT FK_PRODUCERDIRECTOR_PERSON_person_id FOREIGN KEY(producerdirector_id) REFERENCES PERSON(person_id)
 );
 CREATE table ARTIST(
     media_id INT(9) NOT NULL, CHECK (media_id <= 999999999 AND media_id >= 100000000),
