@@ -20,14 +20,15 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     <h3 class="w3-wide"><b>TEAM 205</b></h3>
   </div>
   <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
-    <a href="book.html" class="w3-bar-item w3-button">Books</a>
-    <a href="cd.html" class="w3-bar-item w3-button">CDs</a>
-    <a href="dvd.html" class="w3-bar-item w3-button">DVDs</a>
-    <a href="bluray.html" class="w3-bar-item w3-button">BluRays</a>
+   <a href="/../book.html" class="w3-bar-item w3-button">Books</a>
+    <a href="/../cd.html" class="w3-bar-item w3-button">CDs</a>
+    <a href="/../dvd.html" class="w3-bar-item w3-button">DVDs</a>
+    <a href="/../bluray.html" class="w3-bar-item w3-button">BluRays</a>
     <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
       Genres <i class="fa fa-caret-down"></i>
     </a>
     <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <a href="genre/horror.html" class="w3-bar-item w3-button">Horror</a>  
       <a href="genre/food.html" class="w3-bar-item w3-button">Food</a>
       <a href="genre/comedy.html" class="w3-bar-item w3-button">Comedy</a>
       <a href="genre/drama.html" class="w3-bar-item w3-button">Drama</a>
@@ -50,16 +51,20 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
   <!-- Image header -->
   <div class="w3-display-container w3-container">
-    <img src="res/logo.png" alt="Team 205 Library" style="width:100%">
+    <img src="../res/logo.png" alt="Team 205 Library" style="width:100%">
   </div>
-
-  <!-- Subscribe section -->
+  
+  <!-- Search section -->
   <div class="w3-container w3-black w3-padding-32">
     <h1>Search</h1>
     <p><input class="w3-input w3-border" type="text" placeholder="Enter Item to search" style="width:100%"></p>
     <button type="button" class="w3-button w3-red w3-margin-bottom">Search</button>
   </div>
-  
+
+
+<?php include 'comedy_contents.php'; ?>
+
+
   <!-- Footer -->
   <footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
     <div class="w3-center w3-padding-24">
