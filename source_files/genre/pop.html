@@ -20,7 +20,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     <h3 class="w3-wide"><b>TEAM 205</b></h3>
   </div>
   <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
-   <a href="website/book.html" class="w3-bar-item w3-button">Books</a>
+   <a href="../book.html" class="w3-bar-item w3-button">Books</a>
     <a href="../cd.html" class="w3-bar-item w3-button">CDs</a>
     <a href="../dvd.html" class="w3-bar-item w3-button">DVDs</a>
     <a href="../bluray.html" class="w3-bar-item w3-button">BluRays</a>
@@ -41,7 +41,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     </div>
   </div>
   <a href="#footer" class="w3-bar-item w3-button w3-padding">Contact</a> 
-  <a href="#userdata" class="w3-bar-item w3-button w3-padding">User Data</a> 
+  <a href="../user_data.html" class="w3-bar-item w3-button w3-padding">User Data</a> 
 </nav>
 
 <!-- !PAGE CONTENT! -->
@@ -50,7 +50,9 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
   <!-- Image header -->
   <div class="w3-display-container w3-container">
+        <a  href ="../index.html">                                                             
     <img src="../res/logo.png" alt="Team 205 Library" style="width:100%">
+    </a>
   </div>
   
   <!-- Search section -->
@@ -61,7 +63,10 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
   </div>
 
 
-<?php include 'science_contents.php'; ?>
+<?php
+$genre_type = 'POP';
+include 'genre_content.php';
+?>
 
 
   <!-- Footer -->
@@ -77,6 +82,8 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
   <div class="w3-black w3-center w3-padding-24">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></div>
 </div>
 <!-- End page content -->
+
+
 <script>
 // Accordion 
 function myAccFunc() {
