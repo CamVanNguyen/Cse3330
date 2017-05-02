@@ -93,8 +93,15 @@ $sql = "SELECT *
 	      WHERE LIBUSER.user_id=".$_GET['id'];
 	
 $result = $conn->query($sql);
+
+$user = $result->fetch_assoc();
+
+if($user){
+echo "<h2>USER INFO</h2>";
+echo "<div><p>".$user["name"]. "<br>" .$user["user_id"].  "<br>" .$user["address"]. "<p></div>";
 echo "<div><br></div>";
 
+echo "<h2>BORROWED ITEMS</h2>";
 echo "<div >";
 echo "<table style=\"width:100%\">";
 echo "<tr>
@@ -110,10 +117,14 @@ if ($result->num_rows > 0){
   }
   
 echo "</table>";
-echo "</div>";
+echo "</div><br>";
 }
 else {
   echo "<p>0 results.</p>";
+}
+}
+else{
+  echo"<p>User doesn't exist </p>";
 }
 $conn->close();
 
