@@ -3,6 +3,7 @@
 <title>Library Home Page</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="dropbox.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
@@ -55,7 +56,20 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     </a>
   </div>
   
-
+<!--Drop box for sorting-->
+<div style="width: 100%;display:inline-block; white-space: nowrap;">
+  <div style="background-color:black;width:90%;height:54px;display:inline-block; float:left;"><br></div>
+  <div class="dropdown" style="display:inline-block;float:right;">
+    <button class="dropbtn">Sort by</button>
+      <div class="dropdown-content">
+      <a href="#">Title: A to Z</a>
+      <a href="#">Title: Z to A</a>
+      <a href="#">Genre</a>
+      <a href="#">Average User Rating</a>
+      <a href="#">Number of Ratings</a>
+     </div>
+  </div>
+</div>
 <?php 
 $media_type = 'CD';
 $person_type = 'ARTIST';

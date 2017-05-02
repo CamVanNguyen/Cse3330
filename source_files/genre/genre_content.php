@@ -14,7 +14,8 @@ if ($conn->connect_error) {
 
 $sql = "SELECT title, cover_image, name
         FROM (GENRE JOIN ITEM)
-        WHERE GENRE.genre_id = ITEM.genre_id && GENRE.name = '".$genre_type."'";
+        WHERE GENRE.genre_id = ITEM.genre_id && GENRE.name = '".$genre_type."'
+        ORDER BY title ASC";
 	
 $result = $conn->query($sql);
 echo "<div><br></div><div>";
