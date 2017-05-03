@@ -83,7 +83,7 @@ $sql = "SELECT *
         
 	
 $result = $conn->query($sql);
-echo "<div><br></div><div>";
+echo "<div><br></div>";
 if ($result->num_rows > 0){
 
   $row = $result->fetch_assoc();
@@ -91,9 +91,8 @@ if ($result->num_rows > 0){
     echo "<br><h1>" . $row["title"]. "</h1>";
     echo "<h2>". $row["name"] ."</h2>";
     echo "<h3>". $row["publish_date"]. "</h3>";
-    echo "<img src =" . $row["cover_image"]. " style=\"width:40%\" height:\"20%\">";
-    echo "<div>";
-    echo "<p>Number of Pages: ".$row["page_length"]."</p>";
+    echo "<p><img align=\"right\"src =" . $row["cover_image"]. " style=\"width:40%\" height:\"20%\">";
+    echo "Number of Pages: ".$row["page_length"]."</p>";
     echo "<p>ID: ".$row["book_id"]."</p>";
     if($row["Avg_Ratings"]){
     	echo "<p>Average Rating: " .$row["Avg_Ratings"]."</p>";
@@ -108,6 +107,34 @@ if ($result->num_rows > 0){
 else {
   echo "<p>0 results.</p>";
 }
+echo "<h2>Reviews</h2>";
+//Queries for the review text, rating, review date, User name, 
+$review_request = "SELECT name, date_review, rating,text
+           FROM BOOK 
+           Right Join RATES ON (BOOK.book_id = RATES.item_id)
+           Natural Join REVIEW Natural Join LIBUSER
+           WHERE BOOK.book_id = ".$book." &&
+           REVIEW.user_id = LIBUSER.user_id &&
+           RATES.item_id = REVIEW.item_id ";
+
+$results = $conn->query($review_request);
+
+if($results->num_rows > 0){
+
+    while($reviews = $results->fetch_assoc()){
+      echo "<div><p>User: ".$reviews[name]. "</p>";
+      echo"<p>Date: ".$reviews[date_review]."</p>";
+      echo"<p>Rating: ".$reviews[rating]. "</p>";
+      echo "<p>".$reviews["text"]. "</p></div><br>";
+
+    }
+}
+else{
+
+    echo"<p>There are no reviews.</p>";
+}
+
+
 $conn->close();
 
 ?>
