@@ -74,7 +74,7 @@ if ($conn->connect_error) {
 $book=$_GET['book'];
     
 
-$sql = "SELECT title, cover_image, name, book_id, publish_date
+$sql = "SELECT *
         FROM (BOOK Natural Join ITEM  Natural Join AUTHOR Natural Join PERSON)
 	      WHERE BOOK.book_id = ITEM.item_id &&
               BOOK.book_id = AUTHOR.book_id &&
@@ -90,12 +90,14 @@ if ($result->num_rows > 0){
     echo "<div style=float:left>";
     echo "<br><h1>" . $row["title"]. "</h1>";
     echo "<h2>". $row["name"] ."</h2>";
+    echo "<h3>". $row["publish_date"]. "</h3>";
     echo "<img src =" . $row["cover_image"]. " style=\"width:40%\" height:\"20%\">";
-    // prints the title and name of the book
     echo "<div>";
-  
-  
-echo "</div><br>";
+    echo "<a href=\"book_page.html?book=".$row["recommended_id"]."\">Recommended Book</a>";
+    echo "<p>Number of Pages: ".$row["page_length"]."</p>";
+    echo "<p>ID: ".$row["book_id"]."</p>";
+    echo "</div><br>";
+
 }
 else {
   echo "<p>0 results.</p>";
