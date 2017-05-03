@@ -61,16 +61,17 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
   <div class="dropdown" style="display:inline-block;float:right;">
     <button class="dropbtn">Sort by</button>
       <div class="dropdown-content">
-      <a href="#">Title: A to Z</a>
-      <a href="#">Title: Z to A</a>
-      <a href="#">Genre</a>
-      <a href="#">Average User Rating</a>
-      <a href="#">Number of Ratings</a>
+      <a id="ASC" href="?category=1">Title: A to Z</a>
+      <a id="DSC" href="?category=2">Title: Z to A</a>
+      <a id="GENRE" href="?category=3">Genre</a>
+      <a id="AVG" href="?category=4">Average User Rating</a>
+      <a id="NUM" href="?category=5">Number of Ratings</a>
      </div>
   </div>
 </div>
 
 <?php
+$category = $_GET['category']; 
 $genre_type = 'DRAMA';
 include 'genre_content.php';
 ?>

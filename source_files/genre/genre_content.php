@@ -11,11 +11,37 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+    
+switch($category){       
+    case 1:
+        $sort = "title ASC";
+        break;
+
+    case 2:
+        $sort = "title DESC";
+        break;
+
+    case 3:
+        $sort= "name ASC";
+        break;
+   
+    case 4:
+        
+        break;
+
+    case 5:
+        break;
+    
+    default:
+        $sort = "name ASC";
+        break;
+
+}
 
 $sql = "SELECT title, cover_image, name
         FROM (GENRE JOIN ITEM)
         WHERE GENRE.genre_id = ITEM.genre_id && GENRE.name = '".$genre_type."'
-        ORDER BY title ASC";
+        ORDER BY ".$sort;
 	
 $result = $conn->query($sql);
 echo "<div><br></div><div>";

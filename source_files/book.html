@@ -62,14 +62,16 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
   <div class="dropdown" style="display:inline-block;float:right;">
     <button class="dropbtn">Sort by</button>
       <div class="dropdown-content">
-      <a id:ASC href="#">Title: A to Z</a>
-      <a id:DSC href="#">Title: Z to A</a>
-      <a id:GENRE href="#">Genre</a>
-      <a id:Avg href="#">Average User Rating</a>
-      <a id: NUM href="#">Number of Ratings</a>
+      <a id="ASC" href="?category=1">Title: A to Z</a>
+      <a id="DSC" href="?category=2">Title: Z to A</a>
+      <a id="GENRE" href="?category=3">Genre</a>
+      <a id="AVG" href="?category=4">Average User Rating</a>
+      <a id="NUM" href="?category=5">Number of Ratings</a>
      </div>
   </div>
 </div>
+
+
 <?php 
 $servername = "localhost";
 $username = "guest";
@@ -84,12 +86,44 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+
+$category=$_GET['category'];
+    
+switch($category){       
+    case 1:
+        $sort = "title ASC";
+        break;
+
+    case 2:
+        $sort = "title DESC";
+        break;
+
+    case 3:
+        
+        break;
+   
+    case 4:
+        
+        break;
+
+    case 5:
+        break;
+    
+    default:
+        $sort = "name ASC";
+        break;
+
+}
+
+
+
+
 $sql = "SELECT title, cover_image, name
         FROM (BOOK Natural Join ITEM  Natural Join AUTHOR Natural Join PERSON)
 	      WHERE BOOK.book_id = ITEM.item_id &&
               BOOK.book_id = AUTHOR.book_id &&
               author_id = person_id
-        ORDER BY title ASC";
+        ORDER BY " .$sort;
 	
 $result = $conn->query($sql);
 echo "<div><br></div><div>";
