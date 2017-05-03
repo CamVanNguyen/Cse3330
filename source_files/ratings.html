@@ -3,7 +3,6 @@
 <title>Library Home Page</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="dropbox.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
@@ -50,31 +49,54 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
   <!-- Image header -->
   <div class="w3-display-container w3-container">
-        <a  href ="index.html">                                                             
+    <a  href ="index.html">                                                             
     <img src="res/logo.png" alt="Team 205 Library" style="width:100%">
     </a>
   </div>
-  
-<!--Drop box for sorting-->
-<div style="width: 100%;display:inline-block; white-space: nowrap;">
-  <div style="background-color:black;width:90%;height:54px;display:inline-block; float:left;"><br></div>
-  <div class="dropdown" style="display:inline-block;float:right;">
-    <button class="dropbtn">Sort by</button>
-      <div class="dropdown-content">
-      <a id="ASC" href="?category=1">Title: A to Z</a>
-      <a id="DSC" href="?category=2">Title: Z to A</a>
-      <a id="GENRE" href="?category=3">Genre</a>
-      <a id="AVG" href="?category=4">Average User Rating</a>
-      <a id="NUM" href="?category=5">Number of Ratings</a>
-     </div>
-  </div>
-</div>
+
 
 <?php 
-$category = $_GET['category']; 
-$media_type = 'CD';
-$person_type = 'ARTIST';
-include 'media_contents.php'; ?>
+$servername = "localhost";
+$username = "guest";
+$password = "guest123";
+$dbname = "Library_Catalog";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT title, cover_image, Avg_Ratings
+        FROM ( ITEM NATURAL JOIN 
+          (SELECT a.I AS item_id, AVG(R) AS Avg_Ratings
+          FROM ((SELECT ITEM.item_id AS I, RATES.rating AS R
+                  FROM ITEM LEFT JOIN RATES ON ITEM.item_id=RATES.item_id) AS a )
+                  GROUP BY a.I
+                  HAVING Avg_Ratings >= ".$_GET['rating']."
+                  ORDER BY Avg_Ratings DESC) AS RATINGS )
+        WHERE ITEM.item_id = RATINGS.item_id";
+	
+$result = $conn->query($sql);
+echo "<div><br></div><div>";
+if ($result->num_rows > 0){
+
+  while($row = $result->fetch_assoc()){
+    
+    echo "<div style=float:left><img src =" . $row["cover_image"]. " style=\"width:20%\" height:\"20%\">";
+    echo "<p><b>" . $row["title"]. "</b><br> Ratings: " . $row["Avg_Ratings"] . "</p><div>";
+    
+  }
+echo "</div>";
+}
+else {
+  echo "<p>0 results.</p>";
+}
+$conn->close();
+
+?>
 
 
   <!-- Footer -->
@@ -90,6 +112,7 @@ include 'media_contents.php'; ?>
   <div class="w3-black w3-center w3-padding-24">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></div>
 </div>
 <!-- End page content -->
+
 
 <script>
 // Accordion 
