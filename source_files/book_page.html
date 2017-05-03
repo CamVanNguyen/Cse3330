@@ -75,11 +75,12 @@ $book=$_GET['book'];
     
 
 $sql = "SELECT *
-        FROM (BOOK Natural Join ITEM  Natural Join AUTHOR Natural Join PERSON)
-	      WHERE BOOK.book_id = ITEM.item_id &&
+        FROM (BOOK Natural Join ITEM  Natural Join AUTHOR Natural Join PERSON Natural Join RATINGS_VIEW )
+	WHERE BOOK.book_id = ITEM.item_id &&
               BOOK.book_id = AUTHOR.book_id &&
-              author_id = person_id &&
-              BOOK.book_id = " .$book;
+              AUTHOR.author_id = person_id &&
+              BOOK.book_id = " .$book. "&&
+              RATINGS_VIEW.item_id = BOOK.book_id";
         
 	
 $result = $conn->query($sql);
@@ -93,9 +94,15 @@ if ($result->num_rows > 0){
     echo "<h3>". $row["publish_date"]. "</h3>";
     echo "<img src =" . $row["cover_image"]. " style=\"width:40%\" height:\"20%\">";
     echo "<div>";
-    echo "<a href=\"book_page.html?book=".$row["recommended_id"]."\">Recommended Book</a>";
     echo "<p>Number of Pages: ".$row["page_length"]."</p>";
     echo "<p>ID: ".$row["book_id"]."</p>";
+    if($row["Avg_Ratings"]){
+    	echo "<p>Average Rating: " .$row["Avg_Ratings"]."</p>";
+     }
+     else{
+       echo "No ratings";
+    }
+    echo "<br><a href=\"book_page.html?book=".$row["recommended_id"]."\">Recommended Book</a>";
     echo "</div><br>";
 
 }
