@@ -76,8 +76,9 @@ $sql = "SELECT title, cover_image, Avg_Ratings
                   FROM ITEM LEFT JOIN RATES ON ITEM.item_id=RATES.item_id) AS a )
                   GROUP BY a.I
                   HAVING Avg_Ratings >= ".$_GET['rating']."
-                  ORDER BY Avg_Ratings DESC) AS RATINGS )
-        WHERE ITEM.item_id = RATINGS.item_id";
+                  ) AS RATINGS )
+        WHERE ITEM.item_id = RATINGS.item_id
+        ORDER BY Avg_Ratings DESC";
 	
 $result = $conn->query($sql);
 echo "<div><br></div><div>";

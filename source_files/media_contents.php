@@ -17,22 +17,16 @@ switch($category){
     case 1:
         $sort = "title ASC";
         break;
-
     case 2:
         $sort = "title DESC";
         break;
-
     case 3:
-        $sort= "name ASC";
+        $sort = "publish_date DESC";
         break;
-   
+        break;
     case 4:
-        
+        $sort = "publish_date ASC";
         break;
-
-    case 5:
-        break;
-    
     default:
         $sort = "name ASC";
         break;

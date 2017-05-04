@@ -97,10 +97,16 @@ if ($result->num_rows > 0){
     if($row["Avg_Ratings"]){
     	echo "<p>Average Rating: " .$row["Avg_Ratings"]."</p>";
      }
-     else{
-       echo "No ratings";
+    else{
+      echo "<p>No ratings</p>";
     }
-    echo "<br><a href=\"book_page.html?book=".$row["recommended_id"]."\">Recommended Book</a>";
+    if($row["recommended_id"]){
+      echo "<p><a href=\"book_page.html?book=".$row["recommended_id"]."\">Recommended Book</a></p>";
+    }
+    else{
+      echo "<p>No recommended Items.</p>";  
+    }
+    
     echo "</div><br>";
 
 }
