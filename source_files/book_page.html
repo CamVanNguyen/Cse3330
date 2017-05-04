@@ -100,6 +100,7 @@ if ($result->num_rows > 0){
     else{
       echo "<p>No ratings</p>";
     }
+    echo "<br><br><h3> Recommendation</h3>";
     if($row["recommended_id"]){
       echo "<p><a href=\"book_page.html?book=".$row["recommended_id"]."\">Recommended Book</a></p>";
     }

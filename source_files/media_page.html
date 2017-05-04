@@ -103,6 +103,10 @@ if ($result->num_rows > 0){
      else{
        echo "No ratings";
     }
+    if($row["num_of_tracks"]){
+       echo "<p>Number of Tracks : ".$row["num_of_tracks"]. "</p>";
+    }
+    echo "<br><br><h3> Recommendation</h3>";
     if($row["recommended_id"]){
         echo "<br><a href=\"media_page.html?media=" .$row["recommended_id"]. "&type=" .$media_type. "&person=" .$person_type. "\">Recommended Item</a>";
     }
