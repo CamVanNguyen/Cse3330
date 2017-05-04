@@ -83,9 +83,6 @@ $sql = "SELECT *
         WHERE " .$media_type. "." .strtolower($media_type). "_id = ITEM.item_id && "
                  .$media_type.".".strtolower($media_type). "_id =  " .$media. " &&
                  RATINGS_VIEW.item_id = " .$media;
- 
-
-echo "<p>".$sql."</p>";
 	
 $result = $conn->query($sql);
 echo "<div><br></div>";
@@ -117,14 +114,15 @@ if ($result->num_rows > 0){
 else {
   echo "<p>0 results.</p>";
 }
-echo "<h2>Reviews</h2>";
-/*
+echo "<div><h2>Reviews</h2>";
+
 //Queries for the review text, rating, review date, User name, 
+
 $review_request = "SELECT name, date_review, rating,text
-           FROM BOOK 
-           Right Join RATES ON (BOOK.book_id = RATES.item_id)
+           FROM ".$media_type. 
+         " Right Join RATES ON ".$media_type. "." .strtolower($media_type). "_id = RATES.item_id
            Natural Join REVIEW Natural Join LIBUSER
-           WHERE BOOK.book_id = ".$book." &&
+           WHERE " .$media_type. "." .strtolower($media_type). "_id = ".$media." &&
            REVIEW.user_id = LIBUSER.user_id &&
            RATES.item_id = REVIEW.item_id ";
 
@@ -143,7 +141,8 @@ if($results->num_rows > 0){
 else{
 
     echo"<p>There are no reviews.</p>";
-}*/
+}
+echo "</div>";
 
 $conn->close();
 
