@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <title>Library Home Page</title>
@@ -53,57 +54,53 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     <img src="res/logo.png" alt="Team 205 Library" style="width:100%">
     </a>
   </div>
-    
-  <!-- Login section -->
-  <div class="w3-container w3-black w3-padding-32">
-    <h1>Login</h1>
-    <form action="login.html">
-      <p><input class="w3-input w3-border" type="number" placeholder="Enter Login ID" style="width:100%" name="id"></p>
-      <p><input class="w3-button w3-red w3-margin-bottom" type="submit" value="Login"></p>
-    </form>
-  </div>
-  
-  <!-- Search section -->
-  <div class="w3-container w3-white w3-padding-32">
-    
-  </div>
-  
-  <!-- Rating section -->
-  <div class="w3-container w3-black w3-padding-32">
-    <h1>Search for all items based on average ratings</h1>
-    <form action="ratings.html">
-      <p><input class="w3-input w3-border" type="number" placeholder="Enter a number from 1 to 5" style="width:100%" name="rating" min="1" max="5"></p>
-      <p><input class="w3-button w3-red w3-margin-bottom" type="submit" value="Enter"></p>
-    </form>
-  </div>
-  <div class="w3-container w3-white w3-padding-32">
-  <!--Review section -->
-  <div class="w3-container w3-black w3-padding-32">
-    <h1>Search for all items based on number of reviews</h1>
-    <form action="review.html">
-      <p><input class="w3-input w3-border" type="number" placeholder="Enter a number " style="width:100%" name="review" min="1"></p>
-      <p><input class="w3-button w3-red w3-margin-bottom" type="submit" value="Enter"></p>
-    </form>
-  </div>
 
-  <!-- Search section -->
-  <div class="w3-container w3-white w3-padding-32">  
-  </div>
 
-    <!-- Publish -->
-  <div class="w3-container w3-black w3-padding-32">
-    <h1>Search for Items based on Publish Date</h1>
-    <form action="pub.html">
-      <p>TO: <input class="w3-input w3-border" type="number" placeholder="Enter a year" style="width:100%" name="to"></p>
-      <p>FROM: <input class="w3-input w3-border" type="number" placeholder="Enter a year" style="width:100%" name="from"></p>
-      <p><input class="w3-button w3-red w3-margin-bottom" type="submit" value="Enter"></p>
-    </form>
-  </div>
-  
-  <!-- Search section -->
-  <div class="w3-container w3-white w3-padding-32">
-  
-  </div>
+<?php 
+$servername = "localhost";
+$username = "guest";
+$password = "guest123";
+$dbname = "Library_Catalog";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "Select title, cover_image, total_review
+FROM (ITEM Natural Join
+    ((Select REVIEW.item_id AS reviewed_item, COUNT(*) as total_review
+     From REVIEW
+     Group by reviewed_item
+     HAVING total_review = ".$_GET['review']."
+     Order by reviewed_item) AS REVIEW_COUNT))
+WHERE ITEM.item_id = REVIEW_COUNT.reviewed_item
+ORDER BY total_review DESC";
+
+echo "</h1> ITEMS WITH ".$_GET['review']." REVIEWS </h1>";
+	
+$result = $conn->query($sql);
+echo "<div><br></div><div>";
+if ($result->num_rows > 0){
+
+  while($row = $result->fetch_assoc()){
+    
+    echo "<div style=float:left><img src =" . $row["cover_image"]. " style=\"width:20%\" height:\"20%\">";
+    echo "<p><b>" . $row["title"]. "</b><br></p><div>";
+    
+  }
+echo "</div>";
+}
+else {
+  echo "<p>0 results.</p>";
+}
+$conn->close();
+
+?>
+
 
   <!-- Footer -->
   <footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
