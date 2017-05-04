@@ -82,7 +82,8 @@ $sql = "SELECT *
               " Natural Join RATINGS_VIEW 
         WHERE " .$media_type. "." .strtolower($media_type). "_id = ITEM.item_id && "
                  .$media_type.".".strtolower($media_type). "_id =  " .$media. " &&
-                 RATINGS_VIEW.item_id = " .$media;
+                 RATINGS_VIEW.item_id = " .$media. "&&" 
+                 .$person_type. "." .strtolower($person_type)."_id = PERSON.person_id" ;
 	
 $result = $conn->query($sql);
 echo "<div><br></div>";
